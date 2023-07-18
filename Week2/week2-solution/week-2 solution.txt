@@ -1,0 +1,117 @@
+1.create table stud.
+
+-->create table stud
+(
+         id int primary key,
+         name varchar(10)
+);
+
+>create table stud_details.
+
+-->create table stud_details
+(
+         id int references stud(id)
+         city varchar(15),
+         mobileno int
+);
+
+2.Insert minimum 10 records in each table.
+
+-->insert into stud
+values(1,'siya');
+insert into stud
+values(2,'piya');
+insert into stud
+values(3,'riya');
+insert into stud
+values(4,'radha');
+insert into stud
+values(5,'kishana');
+insert into stud
+values(6,'shivam');
+insert into stud
+values(7,'krishna');
+insert into stud
+values(8,'govin');
+insert into stud
+values(9,'sriya');
+insert into stud
+values(10,'leela');
+
+-->insert into stud_details
+values(1,'mobile',123456789);
+insert into stud_details
+values(2,'dallas',123456788);
+insert into stud_details
+values(3,'vyara',123456787);
+insert into stud_details
+values(4,'vapi',123456786);
+insert into stud_details
+values(5,'bhruch',123456785);
+insert into stud_details
+values(6,'surat',123456784);
+insert into stud_details
+values(7,'navsari',123456783);
+insert into stud_details
+values(8,'banglades',123456782);
+insert into stud_details
+values(9,'songdh',123456781);
+insert into stud_details
+values(10,'mumbai',123456780);
+
+-->select * from stud;
+1|siya
+2|piya
+3|riya
+4|radha
+5|kishana
+6|shivam
+7|krishna
+8|govin
+9|sriya
+10|leela
+
+-->select * from stud_details;
+1|mobile|123456789
+2|dallas|123456788
+3|vyara|123456787
+4|vapi|123456786
+5|bhruch|123456785
+6|surat|123456784
+7|navsari|123456783
+8|banglades|123456782
+9|songdh|123456781
+10|mumbai|123456780
+
+3.Display whose student come from surat city.
+
+-->select * from stud_details
+where city='mobile';
+1|mobile|123456789
+
+
+4.Displat student whose city name start with 'b'.
+
+select * from stud_details
+where city LIKE 'b%';
+
+5|bhruch|123456785
+8|banglades|123456782
+
+5.Update mobile no who are coming from surat. 
+
+update stud_details
+set mobileno=9876549442
+where city='surat';
+
+select * from stud_details;
+1|mobile|9876549442
+2|dallas|123456788
+3|vyara|123456787
+4|vapi|123456786
+5|bhruch|123456785
+6|surat|9876549442
+7|navsari|123456783
+8|banglades|123456782
+9|songdh|123456781
+10|mumbai|123456780
